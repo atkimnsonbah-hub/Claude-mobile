@@ -17,9 +17,9 @@ BOOKS = [
         "description": "A King's Wisdom ebook on the savior trap, King's Wisdom's First Law, and what to do instead.",
     },
     {
-        "slug": "women-dont-have-real-options",
-        "title": "Women Don't Have Real Options",
-        "description": "A King's Wisdom ebook for women: why the options you think you have aren't real, and four ways to attract better ones.",
+        "slug": "how-men-choose-a-wife",
+        "title": "How Men Choose a Wife",
+        "description": "A King's Wisdom ebook for women: a straight-talk guide for women who want more than attention.",
     },
 ]
 
