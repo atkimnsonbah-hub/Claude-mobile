@@ -130,6 +130,31 @@ ul.list li, ol.list li { margin-bottom: .45em; }
 .signoff p.big span { color: var(--accent); }
 .source { font-size: .9rem; color: var(--muted); margin-top: 40px; border-top: 1px solid var(--rule); padding-top: 16px; }
 
+/* Long-form components: chapter lead, step cards, comparison, warning, closing */
+.chapter-lead { font-style: italic; color: var(--muted); font-size: 1.15rem; line-height: 1.55; margin: -12px 0 32px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+.step { border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 6px; padding: 22px 22px 6px; margin: 28px 0; }
+.step .step-num { font-family: "Oswald", Arial, sans-serif; text-transform: uppercase; letter-spacing: .25em; font-size: .8rem; color: var(--accent); margin: 0 0 4px; }
+.step h3 { margin: 0 0 14px; font-size: 1.45rem; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0; }
+.compare > div { border-radius: 6px; padding: 16px; background: var(--box); }
+.compare h4 { font-family: "Oswald", Arial, sans-serif; text-transform: uppercase; letter-spacing: .12em; font-size: .85rem; margin: 0 0 8px; }
+.compare .yes h4 { color: #2f7d4a; } .compare .no h4 { color: var(--accent); }
+.compare ul { list-style: none; margin: 0; padding: 0; font-size: .95rem; line-height: 1.45; }
+.compare li { padding: 7px 0; border-bottom: 1px solid var(--rule); }
+.compare li:last-child { border-bottom: 0; }
+@media (max-width: 480px) { .compare { grid-template-columns: 1fr; } }
+.warning { border: 1px solid var(--accent); border-radius: 6px; padding: 18px 22px; margin: 28px 0; }
+.warning h3 { margin: 0 0 8px; font-size: 1rem; letter-spacing: .2em; color: var(--accent); }
+.warning ul { margin: 0; padding-left: 1.2em; }
+.warning li { margin-bottom: .4em; }
+.closing { text-align: center; padding-top: 72px; }
+.closing .eyebrow { margin-bottom: 4px; }
+.closing h2 { font-family: "Oswald", Arial, sans-serif; text-transform: uppercase; font-size: clamp(2.2rem, 8vw, 3rem); line-height: 1.05; margin: 0 0 28px; }
+.closing p { text-align: left; }
+.closing .final-line { text-align: center; font-style: italic; color: var(--accent); font-size: 1.2rem; margin: 32px 0; }
+.signature { font-style: italic; font-size: 1.5rem; margin: 8px 0 0; text-align: center !important; }
+.handles { font-size: .85rem; color: var(--muted); letter-spacing: .05em; text-align: center !important; margin-top: 28px; }
+
 /* "For Her" edition palette: rose + plum, same series layout */
 .her { --accent: #b8336a; --quote-bar: #b8336a; --cover: #26121d; --box: #f3e3e9; --rule: #e2cfd6; }
 .her .cover::before { background: radial-gradient(circle, rgba(232,106,154,.38), rgba(232,106,154,0) 65%); }
@@ -155,6 +180,15 @@ ul.list li, ol.list li { margin-bottom: .45em; }
   blockquote, .law, .takeaway, .card, .funnel, .prompts { break-inside: avoid; }
   .law, .takeaway, .funnel div { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   h2, h3 { break-after: avoid; }
+  .compare, .warning, .chapter-lead { break-inside: avoid; }
+  .step h3, .step .step-num { break-after: avoid; }
+  .compare { grid-template-columns: 1fr 1fr; }
+  .closing { break-before: page; padding-top: 0; }
+  .closing h2 { font-size: 24pt; margin-bottom: 14px; }
+  .closing p { margin-bottom: .7em; font-size: 10.5pt; }
+  .closing .final-line { margin: 14px 0; font-size: 12pt; }
+  .closing .source { margin-top: 12px; padding-top: 8px; font-size: 8.5pt; }
+  .closing .handles { margin-top: 10px; font-size: 8.5pt; }
   .her { --accent: #a82d5f; --quote-bar: #a82d5f; --box: #f7eaef; --rule: #e6d3da; }
   .toc a { padding: 7px 0; font-size: 10.5pt; }
   .signoff { padding-top: 2.4in; }

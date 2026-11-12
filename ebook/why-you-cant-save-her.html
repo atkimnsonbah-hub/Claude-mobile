@@ -139,6 +139,31 @@ ul.list li, ol.list li { margin-bottom: .45em; }
 .signoff p.big span { color: var(--accent); }
 .source { font-size: .9rem; color: var(--muted); margin-top: 40px; border-top: 1px solid var(--rule); padding-top: 16px; }
 
+/* Long-form components: chapter lead, step cards, comparison, warning, closing */
+.chapter-lead { font-style: italic; color: var(--muted); font-size: 1.15rem; line-height: 1.55; margin: -12px 0 32px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+.step { border: 1px solid var(--rule); border-left: 4px solid var(--accent); border-radius: 6px; padding: 22px 22px 6px; margin: 28px 0; }
+.step .step-num { font-family: "Oswald", Arial, sans-serif; text-transform: uppercase; letter-spacing: .25em; font-size: .8rem; color: var(--accent); margin: 0 0 4px; }
+.step h3 { margin: 0 0 14px; font-size: 1.45rem; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0; }
+.compare > div { border-radius: 6px; padding: 16px; background: var(--box); }
+.compare h4 { font-family: "Oswald", Arial, sans-serif; text-transform: uppercase; letter-spacing: .12em; font-size: .85rem; margin: 0 0 8px; }
+.compare .yes h4 { color: #2f7d4a; } .compare .no h4 { color: var(--accent); }
+.compare ul { list-style: none; margin: 0; padding: 0; font-size: .95rem; line-height: 1.45; }
+.compare li { padding: 7px 0; border-bottom: 1px solid var(--rule); }
+.compare li:last-child { border-bottom: 0; }
+@media (max-width: 480px) { .compare { grid-template-columns: 1fr; } }
+.warning { border: 1px solid var(--accent); border-radius: 6px; padding: 18px 22px; margin: 28px 0; }
+.warning h3 { margin: 0 0 8px; font-size: 1rem; letter-spacing: .2em; color: var(--accent); }
+.warning ul { margin: 0; padding-left: 1.2em; }
+.warning li { margin-bottom: .4em; }
+.closing { text-align: center; padding-top: 72px; }
+.closing .eyebrow { margin-bottom: 4px; }
+.closing h2 { font-family: "Oswald", Arial, sans-serif; text-transform: uppercase; font-size: clamp(2.2rem, 8vw, 3rem); line-height: 1.05; margin: 0 0 28px; }
+.closing p { text-align: left; }
+.closing .final-line { text-align: center; font-style: italic; color: var(--accent); font-size: 1.2rem; margin: 32px 0; }
+.signature { font-style: italic; font-size: 1.5rem; margin: 8px 0 0; text-align: center !important; }
+.handles { font-size: .85rem; color: var(--muted); letter-spacing: .05em; text-align: center !important; margin-top: 28px; }
+
 /* "For Her" edition palette: rose + plum, same series layout */
 .her { --accent: #b8336a; --quote-bar: #b8336a; --cover: #26121d; --box: #f3e3e9; --rule: #e2cfd6; }
 .her .cover::before { background: radial-gradient(circle, rgba(232,106,154,.38), rgba(232,106,154,0) 65%); }
@@ -164,6 +189,15 @@ ul.list li, ol.list li { margin-bottom: .45em; }
   blockquote, .law, .takeaway, .card, .funnel, .prompts { break-inside: avoid; }
   .law, .takeaway, .funnel div { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   h2, h3 { break-after: avoid; }
+  .compare, .warning, .chapter-lead { break-inside: avoid; }
+  .step h3, .step .step-num { break-after: avoid; }
+  .compare { grid-template-columns: 1fr 1fr; }
+  .closing { break-before: page; padding-top: 0; }
+  .closing h2 { font-size: 24pt; margin-bottom: 14px; }
+  .closing p { margin-bottom: .7em; font-size: 10.5pt; }
+  .closing .final-line { margin: 14px 0; font-size: 12pt; }
+  .closing .source { margin-top: 12px; padding-top: 8px; font-size: 8.5pt; }
+  .closing .handles { margin-top: 10px; font-size: 8.5pt; }
   .her { --accent: #a82d5f; --quote-bar: #a82d5f; --box: #f7eaef; --rule: #e6d3da; }
   .toc a { padding: 7px 0; font-size: 10.5pt; }
   .signoff { padding-top: 2.4in; }
@@ -173,13 +207,13 @@ ul.list li, ol.list li { margin-bottom: .45em; }
 </head>
 <body>
 <section class="cover">
-  <div class="series">King's Wisdom &middot; Book One</div>
+  <div class="series">King's Wisdom Presents &middot; Book One</div>
   <div>
     <h1>Why You<span>Can't Save</span>Her</h1>
-    <p class="sub">The savior trap, King's Wisdom's First Law, and the only three moves that make sense.</p>
+    <p class="sub">A King's guide to escaping the savior trap, before it costs you years you can't get back.</p>
   </div>
   <div class="foot">
-    <div class="brand"><small>Stay Dangerous</small>King's Wisdom</div>
+    <div class="brand"><small>Stay Dangerous</small>By King's Wisdom</div>
     <a class="btn" href="why-you-cant-save-her.pdf" download>Download PDF</a>
   </div>
 </section>
@@ -188,217 +222,191 @@ ul.list li, ol.list li { margin-bottom: .45em; }
 
 <section class="front" id="contents">
   <p class="eyebrow">Before you start</p>
-  <p class="note">This ebook is adapted from the King's Wisdom video <em>&ldquo;Why You Can't Save Her.&rdquo;</em> It keeps the video's arguments, examples and blunt, straight-talk style. The opinions are the creator's. Some language has been cleaned up for the page.</p>
+  <p class="note">Adapted from the King's Wisdom video <em>&ldquo;Why You Can't Save Her.&rdquo;</em> The views are the creator's. Some language has been cleaned up for the page.</p>
   <nav class="toc" aria-label="Contents">
     <p class="eyebrow">Contents</p>
     <ol>
-      <li><a href="#intro"><span>00</span>I Know Why You're Here</a></li>
-      <li><a href="#ch1"><span>01</span>You're Not the Exception</a></li>
-      <li><a href="#ch2"><span>02</span>King's Wisdom's First Law</a></li>
-      <li><a href="#ch3"><span>03</span>The Wrong Fix for Every Problem</a></li>
-      <li><a href="#ch4"><span>04</span>What She's Really Looking For</a></li>
-      <li><a href="#ch5"><span>05</span>Reality, Accountability, Work</a></li>
-      <li><a href="#ch6"><span>06</span>When You Win and Still Lose</a></li>
-      <li><a href="#ch7"><span>07</span>Your Three Options</a></li>
-      <li><a href="#ch8"><span>08</span>In Closing</a></li>
-      <li><a href="#cheatsheet"><span>&#9670;</span>The Cheat Sheet</a></li>
+      <li><a href="#intro"><span>00</span>The Trap Every Man Thinks He Can Beat</a></li>
+      <li><a href="#ch1"><span>01</span>King's Wisdom's First Law</a></li>
+      <li><a href="#ch2"><span>02</span>Why You Can't Fix Her</a></li>
+      <li><a href="#ch3"><span>03</span>The 3 Moves When She Shows Up</a></li>
+      <li><a href="#final"><span>&#9670;</span>Final Words</a></li>
     </ol>
   </nav>
 </section>
 
 <section class="chapter" id="intro">
   <p class="chapter-num">Introduction</p>
-  <h2>I Know Why You're Here</h2>
-  <p class="lead">You're here because you've fallen into the trap that a lot of men fall into. You met a woman who was going through it, and somewhere along the way you decided you were the one who could save her.</p>
-  <p>I'm not here to clown you for that. I'm here for you, because I've done the same thing. More than once.</p>
-  <p>The urge to rescue is part of who we are as men. We see something broken and we want to fix it. We see someone struggling and we want to carry the weight. That instinct isn't the problem. The problem is pointing it at a project that can only be finished from the inside.</p>
-  <p>This book explains why it almost never works, what actually happens when you try, and what to do instead the next time a broken woman walks into your life asking for your attention.</p>
-  <blockquote>You think you can change her. You think she's different. I've tried it at least three times.<cite>&mdash; King's Wisdom</cite></blockquote>
+  <h2>The Trap Every Man Thinks He Can Beat</h2>
+  <p class="chapter-lead">&ldquo;She's different with me.&rdquo; &mdash; The most expensive sentence a man will ever say.</p>
+
+  <p class="lead">You know exactly how it starts. You meet a woman who's going through it. Maybe she's drinking too much. Maybe she's got a past she won't talk about, a father who was never there, a bank account that's always on empty. She's beautiful, she's fun, and underneath all of it you can see someone who just needs the right man to come along and steady her.</p>
+
+  <p>And you think: <em>that man is me.</em></p>
+
+  <p>You'll be patient. You'll be consistent. You'll show her what a real man looks like, and slowly she'll become the woman you know she can be. You've seen it in your head a hundred times.</p>
+
+  <p>I know why you're here. You've fallen into the trap that many men have fallen into: you thought you could save her. I'm not here to judge you for it. I'm here for you, because I've done the exact same thing. More than once.</p>
+
+  <blockquote>A broken woman usually stays broken. Not because she can't change, but because she won't look where the change has to happen.</blockquote>
+
+  <p>This book will show you why the savior plan almost never works, what actually happens on the rare occasion that it does, and the only three moves that make sense when a broken woman walks into your life looking for a hero.</p>
+
+  <p>Let's get into it.</p>
 </section>
 
 <section class="chapter" id="ch1">
   <p class="chapter-num">Chapter One</p>
-  <h2>You're Not the Exception</h2>
-  <p class="lead">Men have been warned about this for centuries, in many different languages. The old saying is blunt: <em>you can't turn a hoe into a housewife.</em></p>
-  <p>Here's what's wild. A lot of the men who know that saying, who'd repeat it to their boys without blinking, turn around and try to do exactly that.</p>
-  <p>Why? Because every one of them believes he's the exception. <em>Sure, it doesn't work for most guys, but my situation is different. She's different with me.</em></p>
-  <p>In fact, those men aren't the exception. They <strong>are</strong> the rule. The man who thinks he's the exception is the most common man in this story.</p>
-  <h3>Why the exception feels so real</h3>
-  <p>It feels real because, at the start, you <em>are</em> getting a different version of her. She's showing you her best side because she wants something from you. More on what that something is in Chapter Four. For now, understand that being treated differently in the beginning isn't proof that the ending will be different.</p>
+  <h2>King's Wisdom's First Law</h2>
+  <p class="chapter-lead">Physics has Newton. Relationships have this. Learn it before it learns you.</p>
+
+  <p class="lead">Men have been warned about this for centuries, in many different languages. The old saying is blunt: <em>you can't turn a hoe into a housewife.</em> Here's what's wild. Many of the men who know that saying, who'd repeat it to their friends without blinking, turn around and try to do exactly that.</p>
+
+  <p>Why? Because every one of them believes he's the exception. In fact, he is the rule. The man who thinks he's the exception is the most common man in this entire story.</p>
+
+  <h3>The Law</h3>
+  <p>If you remember any physics, there's a principle called Newton's First Law: an object at rest tends to stay at rest. It keeps doing what it's doing until something acts on it. I'm going to give you a law of my own.</p>
+
+  <div class="law">
+    <div class="kicker">King's Wisdom's First Law</div>
+    <p>A broken woman usually stays broken.</p>
+  </div>
+
+  <h3>How She Got Here</h3>
+  <p>It starts with an initial phase of trauma. Something in her environment hit her hard and impacted her negatively. That part isn't her fault. What decides where she ends up is the second part: how she handles it. And in a lot of cases, she handles it poorly.</p>
+
+  <p>Here's the pattern. When it comes to internal problems, many women are terrible problem solvers, because they reach for the same fix every single time.</p>
+
+  <div class="compare">
+    <div class="no"><h4>The Problem</h4>
+      <ul><li>Drug problem</li><li>Drinking problem</li><li>Daddy issues</li><li>Overweight</li><li>Depression</li><li>Broke</li></ul>
+    </div>
+    <div class="no"><h4>Her &ldquo;Solution&rdquo;</h4>
+      <ul><li>Hoe phase</li><li>Hoe phase</li><li>Hoe phase</li><li>Hoe phase</li><li>Hoe phase</li><li>Hoe phase</li></ul>
+    </div>
+  </div>
+
+  <p>And the worst part is that it doesn't solve the problem. It <strong>compounds</strong> it. When the phase is over she still has the same drinking, the same daddy issues, the same depression, the same empty bank account, plus a higher body count, which lowers her value. She comes out the other side worse off than she went in.</p>
+
+  <h3>What She's Really After</h3>
+  <p>Contrary to popular belief, it's not about the sex. At the core, what she's actually trying to do is find a man to solve her problems.</p>
+
+  <p>The issue is that she does it the wrong way. She leads with her sexuality, and that gets her used and left. If she led with <em>&ldquo;I like you, I want you in my life,&rdquo;</em> a man would be far more likely to invest in her and help her. But she doesn't know how to approach a man like that, so it's used and left, used and left, phase after phase, until she's tired of it.</p>
+
+  <p>That's where you come in. And that's exactly the problem.</p>
+
   <div class="takeaway">
-    <h3>The bottom line</h3>
-    <p>If your plan depends on you being the exception, you don't have a plan. You have a hope.</p>
+    <h3>The Bottom Line</h3>
+    <p>When she finally finds a man who'll step up, she isn't looking for a partner. She's looking for a solution. And a solution that walks in from the outside can only ever be a band-aid.</p>
   </div>
 </section>
 
 <section class="chapter" id="ch2">
   <p class="chapter-num">Chapter Two</p>
-  <h2>King's Wisdom's First Law</h2>
-  <p class="lead">If you remember any physics, there's a law called Newton's First Law: an object at rest tends to stay at rest. It keeps doing what it's doing until something acts on it.</p>
-  <p>I'm going to give you a law of my own.</p>
-  <div class="law">
-    <div class="kicker">King's Wisdom's First Law</div>
-    <p>A broken woman usually stays broken.</p>
+  <h2>Why You Can't Fix Her</h2>
+  <p class="chapter-lead">Even when you do everything right, the ending is almost always the same.</p>
+
+  <p class="lead">As you and I both know, when you try to help a woman change her ways, it isn't a permanent solution. It's a band-aid. It holds while you're there holding it. The moment that relationship is over, notice what happens: she goes right back to the bad habits she already had.</p>
+
+  <p>So what's the real solution? Here's the truth of the matter: the only person who can fix a broken woman is the woman herself. And that requires three things that, in my experience, women hate.</p>
+
+  <div class="step">
+    <p class="step-num">Requirement One</p>
+    <h3>Reality</h3>
+    <p>She has to accept that she is broken. Not &ldquo;going through a phase.&rdquo; Not &ldquo;just having fun.&rdquo; Broken. She has to look at it and understand it first, and that's the part most people never get past.</p>
   </div>
-  <h3>How a woman becomes broken</h3>
-  <p>It usually starts with an <strong>initial phase of trauma</strong>. Something in her environment hit her hard and impacted her negatively. That part isn't her fault.</p>
-  <p>What determines where she ends up is the second part: <strong>how she handles it</strong>. And in a lot of cases, she handles it poorly.</p>
-  <p>That's the important distinction. Trauma happens to everybody in some form. Brokenness is what happens when the response to that trauma makes things worse instead of better, and nobody ever goes back to fix it.</p>
-  <p>Like Newton's object at rest, a broken woman stays broken until something acts on her. As you'll see in Chapter Five, the only force that can actually do that job is her.</p>
+  <div class="step">
+    <p class="step-num">Requirement Two</p>
+    <h3>Accountability</h3>
+    <p>She has to own the fact that the only one who can fix her being broken is her. Not you. Not the next guy. Not the one after that. The moment she hands that job to a man, she's already stopped doing it herself.</p>
+  </div>
+  <div class="step">
+    <p class="step-num">Requirement Three</p>
+    <h3>Work</h3>
+    <p>Then she has to actually do it, day after day, when nobody is watching and nobody is making her. That may not sound like a lot to you. For her, it's a mountain.</p>
+  </div>
+
+  <p>So what's much easier for her to do? Find a man to fix it. That's why the First Law holds. She never looks inside. She's always looking everywhere else, and the internal problems never get fixed. They just get smothered under promiscuity.</p>
+
+  <h3>When You Win and Still Lose</h3>
+  <p>Now let's say you <em>are</em> the exception. She comes to you wanting to change. You take her under your wing and turn her into the best version of herself she can be. You know what happens? Nine times out of ten, it's going to end badly.</p>
+
+  <p>When a woman believes her value has increased, she believes she has access to better options. And because you were the one who invested in her at her lowest, she now thinks: <em>I can do better than you.</em></p>
+
+  <p>But she can't just dump you, because that would expose that she isn't actually a better person, and her new picture of herself would come crashing down into reality. So instead she makes you want to leave. She gets annoying. She gets cold. She resents you. She becomes insufferable.</p>
+
+  <p>And you? You've put in so much time, energy and resources that you aren't going anywhere. So now she's insufferable, you refuse to leave, and you're both miserable. All because you tried to turn a hoe into a housewife.</p>
+
+  <blockquote>Only men value investment. Women do not.<cite>&mdash; King's Wisdom</cite></blockquote>
+
+  <p>Still don't believe me? Picture dating a heavy woman, somewhere around 250 to 260 pounds. You motivate her, you support her, and she drops serious weight. Do you think you get to enjoy the new body? No. She leaves for somebody new, because she believes her value is higher now and she deserves better than the man who was with her at her worst.</p>
+
+  <p>If a woman built <em>you</em> up from nothing, you'd never leave her, because you'd know how hard that was. It doesn't work the other way around. That's hypergamy: the drive to trade up the moment she believes she can.</p>
+
+  <div class="warning">
+    <h3>Red Flag Checklist</h3>
+    <ul>
+      <li>Every problem in her life gets the same answer: another phase, another man.</li>
+      <li>She leads with her sexuality instead of with interest in <em>you</em>.</li>
+      <li>She's looking for someone to fix her, not working on fixing herself.</li>
+      <li>She's never named her problem out loud without blaming someone else for it.</li>
+      <li>Every past &ldquo;change&rdquo; fell apart the moment the relationship ended.</li>
+    </ul>
+  </div>
+
   <div class="takeaway">
-    <h3>The bottom line</h3>
-    <p>Trauma is what happened to her. Brokenness is how it was handled. You can't go back and handle it for her.</p>
+    <h3>The Mindset Shift</h3>
+    <p>Saving her isn't the win you think it is. If it fails, you wasted your time. If it works, her value rises in her eyes and your investment becomes the reason she leaves. Either way, you lose.</p>
   </div>
 </section>
 
 <section class="chapter" id="ch3">
   <p class="chapter-num">Chapter Three</p>
-  <h2>The Wrong Fix for Every Problem</h2>
-  <p class="lead">As long as I can remember, when it comes to <em>internal</em> problems, a lot of women are terrible problem solvers. They reach for the same fix every time: they go through a hoe phase.</p>
-  <p>Don't believe me? Let's break it down.</p>
-  <ul class="list">
-    <li>Drug problem &rarr; hoe phase.</li>
-    <li>Drinking problem &rarr; hoe phase.</li>
-    <li>Daddy issues &rarr; hoe phase.</li>
-    <li>Overweight &rarr; hoe phase.</li>
-    <li>Depression &rarr; hoe phase.</li>
-    <li>Broke &rarr; hoe phase.</li>
-  </ul>
-  <p>Different problem, same answer, every single time.</p>
-  <h3>Why it makes everything worse</h3>
-  <p>Here's the issue: the hoe phase doesn't solve the problem. It <strong>compounds</strong> it.</p>
-  <p>When the phase is over, she still has the same drug problem, the same drinking, the same daddy issues, the same weight, the same depression, the same empty bank account. Now she also has a higher body count, which, the way I see it, lowers her value. She comes out the other side worse off than when she went in.</p>
-  <blockquote>It doesn't solve the problem. In fact, it compounds the problem.<cite>&mdash; King's Wisdom</cite></blockquote>
-  <div class="takeaway">
-    <h3>The bottom line</h3>
-    <p>A fix that leaves the original problem in place and adds a new one isn't a fix. It's a detour that costs her more each time she takes it.</p>
-  </div>
-</section>
+  <h2>The 3 Moves When She Shows Up</h2>
+  <p class="chapter-lead">Stop auditioning for the role of savior. These are the only three plays on the board.</p>
 
-<section class="chapter" id="ch4">
-  <p class="chapter-num">Chapter Four</p>
-  <h2>What She's Really Looking For</h2>
-  <p class="lead">So why do women choose a hoe phase to deal with what's going on inside? Contrary to popular belief, it's not about the sex.</p>
-  <p>At the core, what she's actually trying to do is <strong>find a man to solve her problems.</strong></p>
-  <h3>She leads with the wrong thing</h3>
-  <p>The issue is that she goes about it the wrong way. She leads with her sexuality, and what does that get her? Used and left. Then she does it again, and again, phase after phase, until she's tired of it.</p>
-  <p>If she led with <em>&ldquo;I like you. I want you in my life,&rdquo;</em> a man would be far more likely to invest in her and actually help her solve her problems. But a lot of women don't know how to approach a man like that, so they fall back on the one tool they know gets attention.</p>
-  <h3>Even when she finds the man, it doesn't hold</h3>
-  <p>Here's the funny part. Even when she does find a man who steps up and tries to solve her problems, it still doesn't work.</p>
-  <p>As you and I both know, when you try to help a woman change her ways, it isn't a permanent solution. It's a band-aid. It covers the wound while you're there holding it in place.</p>
-  <p>The moment that relationship is over, notice what happens: she goes right back to the bad habits she already had. Nothing was fixed. It was only managed, by you, for as long as you were around.</p>
-  <div class="takeaway">
-    <h3>The bottom line</h3>
-    <p>If the change only lasts as long as you're there enforcing it, you didn't change her. You just became her band-aid.</p>
-  </div>
-</section>
+  <p class="lead">So, King's Wisdom, what do I do when one of these women comes my way? When a broken woman shows up looking for your attention and looking for something serious and long-lasting, you have three options. That's it.</p>
 
-<section class="chapter" id="ch5">
-  <p class="chapter-num">Chapter Five</p>
-  <h2>Reality, Accountability, Work</h2>
-  <p class="lead">So what's the real solution? Here's the truth of the matter: the only person who can fix a broken woman is the woman herself.</p>
-  <p>Why can't broken women just fix themselves, then? Because it requires three things that, in my experience, women hate:</p>
-  <div class="cards">
-    <div class="card"><h3>1. Reality</h3><p>She has to accept that she is broken. She has to look at it and understand it first.</p></div>
-    <div class="card"><h3>2. Accountability</h3><p>She has to own the fact that the only one who can fix her being broken is <em>her</em>. Not you, not the next guy.</p></div>
-    <div class="card"><h3>3. Work</h3><p>Then she has to actually do the work of fixing it, day after day.</p></div>
+  <div class="step">
+    <p class="step-num">Move One</p>
+    <h3>Ignore Her</h3>
+    <p>You're not interested. Simple. You don't owe her an explanation, a speech or a second look.</p>
+    <p>This is the cleanest move on the board, and the one most men are least willing to make, because the savior in you sees potential. Let it go. Potential is not the same as progress, and you are not the one who has to turn one into the other.</p>
   </div>
-  <p>That may not sound like a lot to you. To her, it's a mountain.</p>
-  <h3>The easier road</h3>
-  <p>So what's much easier for her to do? Find a man to fix it.</p>
-  <p>That's the reason behind King's Wisdom's First Law. A broken woman usually stays broken because she never looks <em>inside</em>. She's looking everywhere else. The internal problems never get fixed. They just get smothered under promiscuity.</p>
-  <div class="law">
-    <div class="kicker">The First Law, explained</div>
-    <p>She stays broken because she never looks inside.</p>
-  </div>
-  <div class="prompts"><strong>Ask yourself</strong>
-    <ul class="list">
-      <li>Has she ever named her problem out loud without blaming someone else for it?</li>
-      <li>Has she ever taken a real step to fix something when nobody was making her?</li>
-      <li>Or is the plan, spoken or not, that <em>you</em> are the fix?</li>
-    </ul>
-  </div>
-</section>
 
-<section class="chapter" id="ch6">
-  <p class="chapter-num">Chapter Six</p>
-  <h2>When You Win and Still Lose</h2>
-  <p class="lead">Let's say you <em>are</em> the exception. A woman comes to you wanting to change, wanting to be better. You take her under your wing and turn her into the best version of herself she can be.</p>
-  <p>You know what happens? Nine times out of ten, it's going to end badly.</p>
-  <h3>Her value goes up. So do her options.</h3>
-  <p>When a woman believes her value has increased, she believes she has access to better options. You were the one who invested in her when she was at her lowest, and that's exactly the problem. Now she thinks: <em>I can do better than you.</em></p>
-  <h3>She won't just leave. She'll make you leave.</h3>
-  <p>She can't simply dump you, because that would expose that she's not actually a better person, and her new picture of herself would come crashing down into reality. As we covered, she hates reality.</p>
-  <p>So what does she do instead? She makes you want to go. She gets annoying. She gets cold and nasty. She starts resenting you. She becomes insufferable, so that <em>you</em> leave and she's free to chase the better options she now believes she deserves.</p>
-  <h3>And you don't leave</h3>
-  <p>But you've poured so much time, energy and resources into her that you aren't going anywhere. You invested too much. You're planted.</p>
-  <p>So now she's being insufferable, you're refusing to leave, and you're both miserable. All because you tried to turn a hoe into a housewife.</p>
-  <h3>The weight-loss example</h3>
-  <p>If you still don't believe me, picture this. You date a heavy woman, somewhere in the 250&ndash;260 pound range. You motivate her, you support her, and she drops a serious amount of weight.</p>
-  <p>Do you think you get to enjoy the benefits of her new body? No. She leaves you for somebody new, because she believes her value is higher now and she deserves better than the man who was with her when she was at her worst.</p>
-  <h3>Only men value investment</h3>
-  <p>Here's the hard part to swallow. If a woman built <em>you</em> up, if she was there when you had nothing and put in the time to help you become who you are, you would never leave her. You'd appreciate that investment because you know how hard it was.</p>
-  <p>It doesn't work the other way around. She'll leave if she believes her value has risen. That's hypergamy: the drive to trade up.</p>
-  <blockquote>Only men value investment. Women do not.<cite>&mdash; King's Wisdom</cite></blockquote>
-  <div class="takeaway">
-    <h3>The bottom line</h3>
-    <p>Success at saving her raises her value in her own eyes. Your investment becomes the reason she leaves, not the reason she stays.</p>
+  <div class="step">
+    <p class="step-num">Move Two</p>
+    <h3>Keep It Physical and Keep It Moving</h3>
+    <p>If you choose to engage, keep it casual and walk away before you start investing. No rescue mission. No project. No &ldquo;let me help you get your life together.&rdquo;</p>
+    <p>The danger was never the time you spent with her. The danger is the investment: the time, energy and resources you pour in that turn into the reason you can't leave later. Don't make the deposit.</p>
   </div>
-</section>
 
-<section class="chapter" id="ch7">
-  <p class="chapter-num">Chapter Seven</p>
-  <h2>Your Three Options</h2>
-  <p class="lead">So, King's Wisdom, what do I do when one of these broken women comes my way? You've got three options.</p>
-  <p>This applies when a broken woman comes looking for your attention and looking for something serious and long-lasting.</p>
-  <div class="cards">
-    <div class="card"><h3>Option 1: Ignore her</h3><p>You're not interested. Simple. No explanation owed.</p></div>
-    <div class="card"><h3>Option 2: Keep it physical and keep moving</h3><p>Keep it casual and walk away before you start investing. No saving, no project.</p></div>
-    <div class="card"><h3>Option 3: Send her to fix it first</h3><p>The one I like. It's only for when she has some real redeeming qualities.</p></div>
+  <div class="step">
+    <p class="step-num">Move Three</p>
+    <h3>Send Her to Fix It First</h3>
+    <p>This is the one I like, and it's only for when she has some real redeeming qualities. If there's nothing redeeming there, it's not worth it. Go back to Move One or Two. But if she does, tell her something like this:</p>
+    <blockquote>I appreciate what you're doing. Go fix your issues, then come back. And if you do, we can see where this goes.</blockquote>
+    <p>Here's what happens. About 98% of the women you say that to will never come back, because, once again, a broken woman usually stays broken.</p>
+    <p>But the other 2%, the minority of the minority, come back with something you could never have given them: proof that they can fix their own internal problems. They did it without you holding the band-aid. That gives you a much better foundation to build on, and that is a very valuable woman to have, provided the problems weren't too severe to begin with.</p>
   </div>
-  <h3>How Option 3 works</h3>
-  <p>If there's nothing redeeming there, it's not worth it. Go back to Option 1 or 2. But if she has some real redeeming qualities, tell her something like this:</p>
-  <blockquote>I appreciate what you're doing. Go fix your issues, then come back. And if you do, we can see where this goes.</blockquote>
-  <p>About 98% of the women you say that to will never come back, because, once again, a broken woman usually stays broken.</p>
-  <p>But the other 2%, the minority of the minority, give you a much better foundation to build on. Now you <em>know</em> she can fix her own internal problems. She proved it without you holding the band-aid. That is a very valuable woman to have, provided the internal problems weren't too severe to begin with.</p>
+
   <div class="takeaway">
-    <h3>The bottom line</h3>
+    <h3>The Bottom Line</h3>
     <p>Don't be the repair shop. Be the reward at the end of the repair.</p>
   </div>
 </section>
 
-<section class="chapter" id="ch8">
-  <p class="chapter-num">Chapter Eight</p>
-  <h2>In Closing</h2>
-  <p class="lead">I know, I know. You think you can change her. You think she's different.</p>
-  <p>Good luck to you, my guy. But I've tried it at least three times, and every single time it failed, even when I thought I understood women.</p>
+<section class="closing" id="final">
+  <p class="eyebrow">Final Words</p>
+  <h2>Stop Trying to Save Her.</h2>
+  <p>I know, I know. You think you can change her. You think she's different. Good luck to you, my guy, but I've tried it at least three times, and every single time it failed, even when I thought I understood women.</p>
   <p>I didn't get burned. I didn't get ruined. I didn't get destroyed. But I still failed. And anything that is not a success is a failure.</p>
-  <p>So please, don't waste your time. When a broken woman shows up looking for a savior, you have three moves:</p>
-  <ol class="list">
-    <li>Ignore her.</li>
-    <li>Keep it physical and keep moving.</li>
-    <li>Tell her to come back once she's fixed her issues.</li>
-  </ol>
-  <p>Simple as that.</p>
-</section>
-
-<section class="chapter" id="cheatsheet">
-  <p class="chapter-num">Quick reference</p>
-  <h2>The Cheat Sheet</h2>
-  <div class="cards">
-    <div class="card"><h3>The First Law</h3><p>A broken woman usually stays broken.</p></div>
-    <div class="card"><h3>How she got there</h3><p>Trauma, then handling it poorly, and never going back to fix it.</p></div>
-    <div class="card"><h3>Her go-to fix</h3><p>A hoe phase, which leaves the original problem in place and adds more.</p></div>
-    <div class="card"><h3>What she's really after</h3><p>A man to solve her problems for her.</p></div>
-    <div class="card"><h3>What actually fixes it</h3><p>Reality, accountability and work, done by her.</p></div>
-    <div class="card"><h3>If you "succeed"</h3><p>Her value rises in her eyes, she wants better options, and nine times out of ten it ends badly.</p></div>
-    <div class="card"><h3>Your three moves</h3><p>Ignore her. Keep it physical. Or send her to fix it first.</p></div>
-  </div>
-</section>
-
-<section class="signoff">
-  <p class="big">Stay safe.<br><span>Stay dangerous.</span></p>
-  <p class="source">Adapted from the King's Wisdom video &ldquo;Why You Can't Save Her&rdquo; (youtu.be/1kK0aRQB6NE). If this hit home, like, comment and subscribe on the channel. Merch and one-on-one consultations are linked in the video description.</p>
+  <p>So remember the law: a broken woman usually stays broken. The only person who can change that is her, through reality, accountability and work. When she shows up looking for a savior, you have three moves: ignore her, keep it physical and keep moving, or send her to fix it first. Simple as that.</p>
+  <p class="final-line">Your time, your energy and your resources are an investment. Only make them where they'll be valued.</p>
+  <p class="signature">&mdash; King's Wisdom</p>
+  <p class="big" style="font-family:Oswald,Arial,sans-serif;text-transform:uppercase;font-size:1.6rem;text-align:center;margin-top:16px;">Stay safe. <span style="color:var(--accent)">Stay dangerous.</span></p>
+  <p class="handles">King's Wisdom Advice Channel &nbsp;|&nbsp; @KingsWisdom &nbsp;|&nbsp; @im_him_now &nbsp;|&nbsp; @kings.wisdom</p>
+  <p class="source">Adapted from the King's Wisdom video &ldquo;Why You Can't Save Her.&rdquo; Merch and one-on-one consultations are linked in the video description.</p>
 </section>
 
 </main>
