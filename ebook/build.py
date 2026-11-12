@@ -1,9 +1,12 @@
 """Build the King's Wisdom ebooks: self-contained HTML + PDF for each book.
 
-Usage:  python3 ebook/build.py
+Usage:  node ebook/covers/make-covers.js   (only when cover designs change)
+        python3 ebook/build.py
 Needs:  Python 3, and Node.js with Playwright + Chromium for the PDF step (ebook/pdf.js).
 """
+import base64
 import html
+import re
 import pathlib
 import subprocess
 
@@ -15,11 +18,13 @@ BOOKS = [
         "slug": "why-you-cant-save-her",
         "title": "Why You Can't Save Her",
         "description": "A King's Wisdom ebook on the savior trap, King's Wisdom's First Law, and what to do instead.",
+        "cover_bg": "#0d0c0d",
     },
     {
         "slug": "how-men-choose-a-wife",
         "title": "How Men Choose a Wife",
         "description": "A King's Wisdom ebook for women: a straight-talk guide for women who want more than attention.",
+        "cover_bg": "#1d0d16",
     },
 ]
 
@@ -54,6 +59,14 @@ def build_html(book):
     css = (SRC / "style.css").read_text()
     body = (SRC / f"{book['slug']}.html").read_text()
     body = body.replace("{{PDF}}", f"{book['slug']}.pdf")
+    art = ROOT / "covers" / f"{book['slug']}-cover.jpg"
+    if art.exists():
+        # Swap the text cover for the cover artwork, embedded so the HTML stays one file.
+        data = base64.b64encode(art.read_bytes()).decode()
+        cover = (f'<section class="cover-art" style="--cover-bg:{book["cover_bg"]}">'
+                 f'<img src="data:image/jpeg;base64,{data}" alt="{html.escape(book["title"])} by King\'s Wisdom">'
+                 f'<a class="btn" href="{book["slug"]}.pdf" download>Download PDF</a></section>')
+        body = re.sub(r'<section class="cover">.*?</section>', lambda m: cover, body, count=1, flags=re.S)
     out = ROOT / f"{book['slug']}.html"
     out.write_text(TEMPLATE.format(
         title=html.escape(book["title"]),

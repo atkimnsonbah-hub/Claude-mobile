@@ -75,6 +75,10 @@ h1, h2, h3, .eyebrow, .kicker, .toc a, .chapter-num, .btn, .takeaway h3, .card h
   padding: 10px 18px; border-radius: 4px; text-transform: uppercase; letter-spacing: .12em; font-size: .85rem;
 }
 
+/* Cover artwork (used when ebook/covers/<slug>-cover.jpg exists) */
+.cover-art { background: var(--cover-bg, #0f0f10); padding: 32px 16px 40px; text-align: center; }
+.cover-art img { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto 24px; box-shadow: 0 18px 50px rgba(0,0,0,.45); }
+
 /* Front matter */
 .front { padding-top: 56px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .25em; font-size: .8rem; color: var(--accent); margin: 0 0 8px; }
@@ -175,6 +179,8 @@ ul.list li, ol.list li { margin-bottom: .45em; }
   .cover { page: cover; min-height: 9in; height: 9in; padding: .8in .7in; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .cover h1 { font-size: 46pt; }
   .btn, .no-print { display: none !important; }
+  .cover-art { page: cover; height: 9in; padding: 0; display: flex; align-items: center; justify-content: center; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cover-art img { width: 100%; height: 100%; max-width: none; margin: 0; object-fit: contain; box-shadow: none; }
   .front, .chapter, .signoff { break-before: page; padding-top: 0; }
   .chapter h2 { font-size: 26pt; }
   blockquote, .law, .takeaway, .card, .funnel, .prompts { break-inside: avoid; }
