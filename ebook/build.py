@@ -19,7 +19,7 @@ BOOKS = [
     {
         "slug": "women-dont-have-real-options",
         "title": "Women Don't Have Real Options",
-        "description": "A King's Wisdom ebook on real versus imagined options, and four ways to raise the quality of them.",
+        "description": "A King's Wisdom ebook for women: why the options you think you have aren't real, and four ways to attract better ones.",
     },
 ]
 

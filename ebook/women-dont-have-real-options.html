@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Women Don&#x27;t Have Real Options</title>
-<meta name="description" content="A King&#x27;s Wisdom ebook on real versus imagined options, and four ways to raise the quality of them.">
+<meta name="description" content="A King&#x27;s Wisdom ebook for women: why the options you think you have aren&#x27;t real, and four ways to attract better ones.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <style>
 /* King's Wisdom ebook series — shared styles (screen + print/PDF) */
@@ -139,6 +139,16 @@ ul.list li, ol.list li { margin-bottom: .45em; }
 .signoff p.big span { color: var(--accent); }
 .source { font-size: .9rem; color: var(--muted); margin-top: 40px; border-top: 1px solid var(--rule); padding-top: 16px; }
 
+/* "For Her" edition palette: rose + plum, same series layout */
+.her { --accent: #b8336a; --quote-bar: #b8336a; --cover: #26121d; --box: #f3e3e9; --rule: #e2cfd6; }
+.her .cover::before { background: radial-gradient(circle, rgba(232,106,154,.38), rgba(232,106,154,0) 65%); }
+.her .cover .sub { color: #ecd9e1; }
+.her .cover .series { color: #d6b8c5; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .her { --accent: #ff7aa8; --quote-bar: #ff7aa8; --box: #2a1c23; --rule: #3c2a33; }
+}
+:root[data-theme="dark"] .her { --accent: #ff7aa8; --quote-bar: #ff7aa8; --box: #2a1c23; --rule: #3c2a33; }
+
 /* Print / PDF */
 @page { size: 6in 9in; margin: 0.7in 0.65in 0.75in; }
 @page cover { margin: 0; }
@@ -154,6 +164,7 @@ ul.list li, ol.list li { margin-bottom: .45em; }
   blockquote, .law, .takeaway, .card, .funnel, .prompts { break-inside: avoid; }
   .law, .takeaway, .funnel div { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   h2, h3 { break-after: avoid; }
+  .her { --accent: #a82d5f; --quote-bar: #a82d5f; --box: #f7eaef; --rule: #e6d3da; }
   .toc a { padding: 7px 0; font-size: 10.5pt; }
   .signoff { padding-top: 2.4in; }
 }
@@ -161,11 +172,12 @@ ul.list li, ol.list li { margin-bottom: .45em; }
 </style>
 </head>
 <body>
+<div class="her">
 <section class="cover">
-  <div class="series">King's Wisdom &middot; Book Two</div>
+  <div class="series">King's Wisdom &middot; Book Two &middot; For Her</div>
   <div>
     <h1>Women Don't<span>Have Real</span>Options</h1>
-    <p class="sub">Why the options you think you have aren't real, and four ways to raise the quality of the ones you do.</p>
+    <p class="sub">A straight-talk guide for the woman who wants the real thing: why the options you think you have aren't real, and four ways to attract better ones.</p>
   </div>
   <div class="foot">
     <div class="brand"><small>Stay Dangerous</small>King's Wisdom</div>
@@ -177,11 +189,11 @@ ul.list li, ol.list li { margin-bottom: .45em; }
 
 <section class="front" id="contents">
   <p class="eyebrow">Before you start</p>
-  <p class="note">This ebook is adapted from the King's Wisdom video <em>&ldquo;Women Don't Have Real Options.&rdquo;</em> It keeps the video's arguments, examples and blunt, straight-talk style. The opinions are the creator's. Some language has been cleaned up for the page.</p>
+  <p class="note">This ebook is adapted from the King's Wisdom video <em>&ldquo;Women Don't Have Real Options,&rdquo;</em> rewritten to speak directly to you, the woman. It keeps the video's arguments, examples and blunt, straight-talk style. The opinions are the creator's. Some language has been cleaned up for the page.</p>
   <nav class="toc" aria-label="Contents">
     <p class="eyebrow">Contents</p>
     <ol>
-      <li><a href="#intro"><span>00</span>Something a Little Different</a></li>
+      <li><a href="#intro"><span>00</span>This One's for You</a></li>
       <li><a href="#ch1"><span>01</span>The Illusion of Abundance</a></li>
       <li><a href="#ch2"><span>02</span>Wanting You Isn't Choosing You</a></li>
       <li><a href="#ch3"><span>03</span>Do the Math</a></li>
@@ -191,43 +203,46 @@ ul.list li, ol.list li { margin-bottom: .45em; }
       <li><a href="#ch7"><span>07</span>Way Three: Act Like a Lady</a></li>
       <li><a href="#ch8"><span>08</span>Way Four: Your Body Count</a></li>
       <li><a href="#ch9"><span>09</span>Operate in Reality</a></li>
-      <li><a href="#cheatsheet"><span>&#9670;</span>The Cheat Sheet</a></li>
+      <li><a href="#cheatsheet"><span>&#9670;</span>Your Cheat Sheet</a></li>
     </ol>
   </nav>
 </section>
 
 <section class="chapter" id="intro">
   <p class="chapter-num">Introduction</p>
-  <h2>Something a Little Different</h2>
-  <p class="lead">I usually give men advice. Today I'm talking to the women.</p>
-  <p>Men, you can still read along, but for you this one is more for entertainment. Ladies, this one's for you, and I'm going to be straight with you, because nobody else is.</p>
-  <p>Some men won't like me for this, because it works against their strategy. But women say I bash them too much, so for a change I'm going to help you out. First I'll break the illusion. Then I'll hand you the blueprint.</p>
-  <blockquote>The options you think you have? They're not real. I'm going to explain why.<cite>&mdash; King's Wisdom</cite></blockquote>
+  <h2>This One's for You</h2>
+  <p class="lead">I usually give men advice. Today I'm talking to you, the woman, and only you.</p>
+  <p>You've told me I'm too hard on women. Fair. So this time I'm on your side of the table. I'm going to tell you what men actually think, the stuff we say to each other and never say to you, so you can stop guessing and start choosing.</p>
+  <p>I'm going to be straight with you, because nobody else will be. Your girls will hype you up. Social media will tell you you're perfect as you are. The guys in your DMs will tell you whatever gets them what they want. I'm going to tell you the truth, because you deserve to know how the game really works.</p>
+  <p>First I'll break the illusion. Then I'll give you the blueprint.</p>
+  <blockquote>The options you think you have? They're not real. I'm going to explain why, and then show you how to get real ones.<cite>&mdash; King's Wisdom</cite></blockquote>
 </section>
 
 <section class="chapter" id="ch1">
   <p class="chapter-num">Chapter One</p>
   <h2>The Illusion of Abundance</h2>
-  <p class="lead">A lot of women think they have all these options, and that those options will always be there. No matter how old they get, they believe they'll always have the same abundance of men who want them.</p>
-  <p>I always found that funny, because it doesn't work like that.</p>
-  <p>A woman might say:</p>
-  <blockquote>I've got guys all over me. My phone, my DMs, my guy friends waiting in line, guys approaching me everywhere on the street. Of course I've got options.</blockquote>
-  <p>And to that I say: no. Those options are not real.</p>
-  <p>Women have been making this mistake for thousands of years. I get it, but I also think it's pretty silly. Let me show you why.</p>
+  <p class="lead">Be honest with yourself for a second. Do you feel like you have options? Like there will always be men who want you, no matter how old you get?</p>
+  <p>Most women believe that. And I get why. Look around:</p>
+  <blockquote>Guys are all over me. My phone, my DMs, my guy friends waiting in line, men approaching me everywhere I go. Of course I've got options.</blockquote>
+  <p>Sis, I'm going to say this with love: those options are not real.</p>
+  <p>It's not your fault you think they are. Women have been making this mistake for thousands of years, because from where you're standing, attention <em>looks</em> exactly like opportunity. It isn't. Let me show you the difference.</p>
+  <div class="takeaway">
+    <h3>The bottom line</h3>
+    <p>Attention is not the same as options. You can be surrounded by men and still have very few who would actually choose you.</p>
+  </div>
 </section>
 
 <section class="chapter" id="ch2">
   <p class="chapter-num">Chapter Two</p>
   <h2>Wanting You Isn't Choosing You</h2>
-  <p class="lead">The core mistake: women confuse <strong>sexual attraction</strong> with <strong>relationship attraction</strong>.</p>
-  <p>Just because a guy is interested in you doesn't make him a viable relationship candidate. Not at all. It has never meant that for men.</p>
-  <h3>Men compartmentalize</h3>
-  <p>If I want to sleep with you, I want to sleep with you. If I want a relationship with you, I want a relationship with you. Those are two different categories. Just because I want to sleep with you doesn't mean I want to wife you.</p>
-  <p>So you can't think, <em>&ldquo;He thinks I'm cute, so if things don't work out with my man I can always go to him.&rdquo;</em> No. You don't even know if he <em>likes</em> you. He may just want to hook up, and that doesn't mean anything.</p>
-  <h3>Flip it around</h3>
-  <p>Here's how it looks from our side. A man who wants to sleep with you but doesn't want to commit is the same thing as a woman who wants a relationship with me but isn't sexually attracted to me.</p>
-  <p>What am I supposed to do with that? It means absolutely nothing to me. That's not a real option.</p>
-  <p>It's the same for you. A man who wants to sleep with you but doesn't want to commit isn't a real option. Him wanting you is like saying water is wet. It's a given. It doesn't hold any real value.</p>
+  <p class="lead">Here's the core mistake: you're confusing <strong>sexual attraction</strong> with <strong>relationship attraction</strong>.</p>
+  <p>A man being interested in you doesn't make him a viable relationship candidate. Not at all. For men, it has never meant that.</p>
+  <h3>How men really think</h3>
+  <p>Men compartmentalize. When a man wants to sleep with you, that's what he wants. When a man wants a relationship with you, that's a completely different thing. Two separate boxes. A man wanting you in bed does not mean he wants to make you his wife.</p>
+  <p>So when you think, <em>&ldquo;He thinks I'm cute, so if things don't work out with my man I can always go to him,&rdquo;</em> stop. You don't even know if he <em>likes</em> you. He may just want to hook up. That's not a backup plan. That's nothing.</p>
+  <h3>You already know this feeling</h3>
+  <p>Think about the guy who's sweet to you, wants a relationship with you, would commit tomorrow, but you're just not attracted to him. Does he count as an option to you? Be honest. No. You'd never actually choose him. He's not a real option.</p>
+  <p>That's exactly how men see it from the other side. The man who wants to sleep with you but won't commit is your version of that guy. His wanting you is like saying water is wet. Of course he does. It doesn't hold any real value for you.</p>
   <div class="law">
     <div class="kicker">Remember this</div>
     <p>A man offering sex and a man offering commitment are two different things.</p>
@@ -237,8 +252,8 @@ ul.list li, ol.list li { margin-bottom: .45em; }
 <section class="chapter" id="ch3">
   <p class="chapter-num">Chapter Three</p>
   <h2>Do the Math</h2>
-  <p class="lead">Let's break the delusion with a little logic. How many options do you actually have?</p>
-  <p>Picture a thousand men who find you attractive, then run them through the filters that actually matter for a long-term relationship.</p>
+  <p class="lead">Let's put a little logic on it. How many options do you really have?</p>
+  <p>Picture a thousand men who find you attractive. Now run them through the filters that matter to <em>you</em>, if what you want is a real, long-term relationship.</p>
   <div class="funnel" role="img" aria-label="Funnel: 1,000 men find you attractive; about 900 would sleep with you; about 500 would date you; far fewer would marry you; fewer still are men you also like.">
     <div class="f1"><b>1,000</b> find you attractive</div>
     <div class="f2"><b>~900</b> would sleep with you</div>
@@ -246,142 +261,150 @@ ul.list li, ol.list li { margin-bottom: .45em; }
     <div class="f4">Far fewer would marry you</div>
     <div class="f5">Fewer still you also like</div>
   </div>
-  <p>Some men find you attractive but still wouldn't touch you. Narrow it down. Of the ones who would, only some would take you on a date. Of those, only a fraction want to marry you. Then that fraction has to be men <em>you</em> are also into.</p>
-  <p>Yes, you can find guys to hook up with. Yes, you can find guys to date you. But guys for the long term, who want to marry you, <em>and</em> who you also like? All those filters shrink the pool very, very quickly.</p>
+  <p>Some men will find you attractive and still pass. Of the ones who wouldn't, only some would take you on a real date. Of those, only a fraction want to marry you. And then that fraction has to be men <em>you</em> actually want.</p>
+  <p>Yes, you can find guys to hook up with. Yes, you can find guys to date you. But a man who wants you for the long term, wants to marry you, <em>and</em> is someone you like back? All those filters shrink the pool very, very fast.</p>
   <div class="takeaway">
     <h3>The bottom line</h3>
-    <p>From the thousand options you think you have, you only have a handful of real, viable, long-term options that actually mean something.</p>
+    <p>Out of the thousand options you think you have, you only have a handful of real, long-term options that actually mean something. So treat them that way.</p>
   </div>
 </section>
 
 <section class="chapter" id="ch4">
   <p class="chapter-num">Chapter Four</p>
   <h2>It's Not a Replenishing Resource</h2>
-  <p class="lead">I'm going to be honest with you. If you're in your mid-thirties to early forties, you've probably already met all the guys who could have been good candidates.</p>
-  <p>If you're still single now, it may be because you rejected them. You didn't realize you didn't have as many options as you thought. You turned them down, kept it casual, or ruined it. That ship sailed.</p>
-  <p>Yet a lot of women still think there are more coming, like it's a replenishing resource. Unfortunately for you, it doesn't work like that.</p>
-  <h3>The difference between us</h3>
-  <p>For men, there's a woman turning twenty-one every single day. From our side, the supply never ends.</p>
-  <p>For you, the older you get and the more money you make, the fewer men there are you'll consider. The pool keeps getting smaller and it gets harder and harder.</p>
-  <p>But I'm not here to give you doom and gloom. All is not lost. Here are the four ways to increase your real, quality, long-term options.</p>
+  <p class="lead">This part is hard to hear, so I'm going to say it gently and honestly. If you're in your mid-thirties to early forties, there's a good chance you've already met the men who could have been great partners for you.</p>
+  <p>If you're still single, it may be because you passed on them. Not because you're a bad person, but because you believed you had more options than you did. Maybe you turned them down, kept it casual, or let it fall apart. Those chances may be gone.</p>
+  <p>The mistake is thinking there are always more coming, like it's a replenishing resource. Unfortunately, for you it doesn't work like that.</p>
+  <h3>Why it's different for you</h3>
+  <p>For men, there's a woman turning twenty-one every single day. From his side, the supply never runs out.</p>
+  <p>For you, the older you get and the more money you make, the fewer men there are you'll consider. Your standards go up while the pool gets smaller. It gets harder and harder.</p>
+  <p>I'm not telling you this to scare you. I'm telling you so you can act on it. All is not lost. Here are four ways to increase your real, quality, long-term options, starting today.</p>
 </section>
 
 <section class="chapter" id="ch5">
   <p class="chapter-num">Way One</p>
   <h2>Get in Shape</h2>
-  <p class="lead">I don't know where the idea came from that being overweight is somehow sexy. Let's think about it objectively, ladies.</p>
-  <p>Men are visual creatures, correct? We're stimulated by what we see. If you're visually unappealing, how likely are we to fight for you? Not very.</p>
-  <p>Getting in shape will greatly increase your options. It can double, sometimes triple, the number of guys who want you. That gives you a much bigger pool of men to choose from, men you'd actually want to take seriously.</p>
+  <p class="lead">I don't know where the idea came from that being overweight is sexy. Let's look at it objectively, ladies, because this one is fully in your control.</p>
+  <p>Men are visual. That's not a secret, it's how we're wired. We respond to what we see first. If we're not drawn in visually, we're not going to fight for you.</p>
+  <p>Getting in shape will greatly increase your options. It can double, sometimes triple, the number of men who want you. That means a much bigger pool of men to choose from, and more of them will be men <em>you</em> would actually take seriously.</p>
   <h3>&ldquo;But I love my curves, and guys still hit on me&rdquo;</h3>
-  <p>Okay. First, who are those guys? Second, are you telling me that if you lost the weight and got more options, <em>and</em> lived longer because of it, you'd somehow be worse off? Really? We're not trying to hurt you. We're trying to help you.</p>
+  <p>I hear you. But ask yourself two things. First, which guys are hitting on you, and are they the ones you want? Second, if losing the weight gave you more options <em>and</em> let you live a longer, healthier life, how would that make you worse off? It wouldn't. This isn't about hurting you. It's about helping you.</p>
   <h3>The slim friend test</h3>
-  <p>If you have a slim friend, and when you go out you notice men literally walk around you to go talk to her, imagine if you had a similar body type. Those men would be split between the two of you. How many more options would you have?</p>
-  <p>Be heavy if you want to. But if you really want to increase the number of options you have, lose the weight.</p>
+  <p>If you have a slim friend, and when you go out you notice men literally walk around you to go talk to her, imagine you had a similar body type. Those men would be split between the two of you. How many more options would you have?</p>
+  <p>It's your body and your choice. But if what you want is more options, this is the fastest way to get them.</p>
   <div class="takeaway">
     <h3>The bottom line</h3>
-    <p>Men like a woman who's in shape. It's the fastest way to widen your pool and improve your health at the same time.</p>
+    <p>Men like a woman who's in shape. Getting there widens your pool, raises your confidence and improves your health at the same time.</p>
   </div>
 </section>
 
 <section class="chapter" id="ch6">
   <p class="chapter-num">Way Two</p>
   <h2>Dress Modestly</h2>
-  <p class="lead">If every outfit you wear when you go out has to show some skin, you know what men like me think? Not &ldquo;relationship candidate.&rdquo; Not &ldquo;I should take her on a date.&rdquo;</p>
-  <p>We think, <em>&ldquo;Let me get her back to my place. Not much effort required.&rdquo;</em></p>
-  <p>If that's how you want to be seen, fine. But we're talking about increasing the <strong>quality</strong> of your options, and remember: a man who only wants to sleep with you is worthless as an option.</p>
-  <h3>Modesty is a force field</h3>
-  <p>Dressing modestly acts like a force field. The men without the best intentions see you and think: <em>&ldquo;Nah, that one's work. She probably respects herself. She probably has a good relationship with her father.&rdquo;</em></p>
-  <p>Just by how you dressed, half of the low-intent men who would have approached you are gone. You're too much work for them.</p>
-  <p>It's not going to drop to zero. But the number you attract will be much lower, and the men who remain are the ones thinking of you as girlfriend or wife material.</p>
+  <p class="lead">Let me tell you what men think when every outfit you go out in has to show some skin. It's not &ldquo;relationship candidate.&rdquo; It's not &ldquo;I should take her on a date.&rdquo;</p>
+  <p>It's: <em>&ldquo;Let me get her back to my place. Not much effort required.&rdquo;</em></p>
+  <p>If that's how you want to be seen, that's your choice. But we're talking about raising the <strong>quality</strong> of your options. And remember Chapter Two: a man who only wants to sleep with you is worthless as an option.</p>
+  <h3>Modesty is your force field</h3>
+  <p>When you dress modestly, it works like a force field. The men with bad intentions see you and think: <em>&ldquo;Nah, she's work. She probably respects herself. She probably has a good relationship with her father.&rdquo;</em></p>
+  <p>Just by how you dressed, about half of the low-intent men who would have approached you are gone. You filtered them out without saying a word.</p>
+  <p>It won't drop to zero. But you'll attract far fewer of the wrong men, and the ones who still step to you are more likely to see you as girlfriend or wife material.</p>
   <div class="takeaway">
     <h3>The bottom line</h3>
-    <p>How you dress decides who approaches. Dress for the man you want, not the man who wants one night.</p>
+    <p>How you dress decides who approaches you. Dress for the man you want, not the man who only wants one night.</p>
   </div>
 </section>
 
 <section class="chapter" id="ch7">
   <p class="chapter-num">Way Three</p>
   <h2>Act Like a Lady</h2>
-  <p class="lead">I don't know exactly what happened, but in the past fifty years a lot of women decided that acting like a man would get them what they want. How's that working?</p>
-  <p>It doesn't. Acting like a lady has worked for thousands of years. It's not going to suddenly stop working now.</p>
-  <h3>Men are built to protect</h3>
-  <p>Men naturally want to protect a woman. It's an instinct. But if a woman says, <em>&ldquo;Nah, I've got it, I don't need your help, I don't need you,&rdquo;</em> then we won't want to protect her. You don't want to be taken care of? Go ahead and do it all by yourself. I'm going to talk to the girl over there who looks like she could use my help.</p>
+  <p class="lead">Somewhere in the past fifty years, a lot of women were told that acting like a man would get them what they want. Has that worked for you?</p>
+  <p>It doesn't. Acting like a lady has worked for thousands of years, and it's not going to suddenly stop working now.</p>
+  <h3>Let him protect you</h3>
+  <p>Men naturally want to protect a woman. It's an instinct. But when you say, <em>&ldquo;Nah, I've got it, I don't need your help, I don't need you,&rdquo;</em> you switch that instinct off. He hears it, believes you, and goes to talk to the woman who looks like she'd appreciate his help.</p>
   <p>If you want to be taken care of, you can't act like a man, because men don't get taken care of.</p>
-  <h3>Your power vs. our power</h3>
-  <p>I understand why acting like a man looks attractive. You see that men can sleep with whoever we want without emotional attachment and without being judged. But that's <em>our</em> power.</p>
-  <p>Your power is different. Your power is getting men to do things for you without lifting a finger, just by being a lady.</p>
+  <h3>Your power isn't his power</h3>
+  <p>I understand why acting like a man looks appealing. You see that men can sleep with whoever they want without emotional attachment and without being judged. But that's <em>his</em> power, not yours.</p>
+  <p>Your power is different, and honestly, it's stronger. Your power is getting men to do things for you without lifting a finger, just by being a lady.</p>
   <h3>The heavy box</h3>
-  <p>Say you have to move a heavy box from point A to point B. You grab it, struggle, set it down and say, <em>&ldquo;Wow, this is so heavy, I don't think I can move it.&rdquo;</em> All of a sudden three guys materialize: <em>&ldquo;I got it, I got it, I got it.&rdquo;</em> The box goes exactly where you wanted it. You didn't lift a finger.</p>
-  <p>Some women would call that weakness. It isn't. That's your power. But if you say, <em>&ldquo;I don't need your help, I've got it,&rdquo;</em> now you're struggling. For what? Pride.</p>
+  <p>Say you have to move a heavy box from point A to point B. You pick it up, struggle, set it down and say, <em>&ldquo;Wow, this is so heavy, I don't think I can move it.&rdquo;</em> All of a sudden three men appear out of nowhere: <em>&ldquo;I got it, I got it, I got it.&rdquo;</em> The box goes exactly where you wanted it. You didn't lift a finger.</p>
+  <p>Some people will call that weakness. It isn't. That's your power. But if you say, <em>&ldquo;I don't need your help, I've got it,&rdquo;</em> now you're struggling alone. For what? Pride.</p>
   <div class="takeaway">
     <h3>The bottom line</h3>
-    <p>If you act like a lady, more men, and most men want exactly that, will take you seriously.</p>
+    <p>When you act like a lady, more men, and the kind of men you want, will take you seriously.</p>
   </div>
 </section>
 
 <section class="chapter" id="ch8">
   <p class="chapter-num">Way Four</p>
   <h2>Your Body Count</h2>
-  <p class="lead">The fourth way to increase your options, in quality and not just quantity: keep your body count low.</p>
-  <p>Most men understand we're not getting a woman with no past. We accept that. It's reality. But if you want to be taken seriously long term, my view is that anything over nine or ten is too much.</p>
-  <h3>Already over? Then don't act like it.</h3>
-  <p>Let's be honest, plenty of women reading this are already past that number. Fine. The key is this: <strong>don't act like your body count.</strong> That means no hoe tendencies:</p>
+  <p class="lead">The fourth way to raise your options, in quality and not just quantity: keep your body count low.</p>
+  <p>Here's what you should know about how men think. Most men understand they're not getting a woman with no past. They accept it. That's reality. But if you want to be taken seriously for the long term, the creator's view is that anything over nine or ten is too much for most men.</p>
+  <h3>Already past that? Then don't act like it.</h3>
+  <p>If you're already over that number, that's fine. It's not the end. The key is this: <strong>don't act like your body count.</strong> Drop the tendencies men read as red flags:</p>
   <ul class="list">
-    <li>Don't announce everything you've done and everywhere you've been. <em>&ldquo;I did this, I did that, I went here, I went there&rdquo;</em> is a hoe tendency.</li>
-    <li>Don't act like you've been there before. Let him be the one to show you the world, like Aladdin.</li>
+    <li>Don't announce everything you've done and everywhere you've been. <em>&ldquo;I did this, I did that, I went here, I went there&rdquo;</em> tells him more than you think.</li>
+    <li>Don't act like you've seen it all. Let him be the one to show you the world, like Aladdin.</li>
     <li>Don't be out every week and every weekend.</li>
-    <li>Don't keep a bunch of guy friends.</li>
+    <li>Don't keep a bunch of guy friends around.</li>
   </ul>
-  <p>These are the habits of women with high body counts, and men read them instantly.</p>
+  <p>Men pick up on these habits instantly, and they shape whether he sees you as a girlfriend or a good time.</p>
   <h3>Not lying, pacing</h3>
-  <p>I'm not saying lie to him. What I'm saying is: don't act like you have that past. Men won't like me saying this, but I'm helping the women right now.</p>
-  <p>Tell him about your past in small pieces, a bit here and a bit there, while he keeps investing in you. By the time he knows the full story, he's already in love with you, looks past it and forgives you for it.</p>
+  <p>I'm not telling you to lie to him. I'm telling you not to lead with your past. Some men won't like me for saying this, but I'm here for you right now, not them.</p>
+  <p>Share your past in small pieces, a little here and a little there, as he keeps investing in you. By the time he knows the full story, he's already in love with you, he looks past it and he forgives it.</p>
   <h3>Then close that chapter for good</h3>
-  <p>Once he knows your full past, don't do any of that again. If you go back to those habits, you will end up alone.</p>
+  <p>Once he knows everything, leave that life behind for real. If you go back to those habits, you will end up alone.</p>
   <div class="takeaway">
     <h3>The bottom line</h3>
-    <p>Your past is your past. Your behavior is what he's deciding on. Act like the woman he'd commit to, and then stay her.</p>
+    <p>Your past is your past. Your behavior now is what he's deciding on. Be the woman he'd commit to, and then stay her.</p>
   </div>
 </section>
 
 <section class="chapter" id="ch9">
   <p class="chapter-num">Chapter Nine</p>
   <h2>Operate in Reality</h2>
-  <p class="lead">I've just laid out every way you can increase the quality of your options. You don't have to listen to me.</p>
-  <p>But if you choose not to, keep your phone on vibrate, because you're not getting a ring. You'll end up like James Harden, Russell Westbrook and Chris Paul: all that talent, no rings.</p>
-  <p>Here's the obvious part. If you've noticed that doing whatever you want isn't working, maybe it's time to try the blueprint. Take my word for it, or don't.</p>
+  <p class="lead">I've just laid out every way you can raise the quality of your options. You don't have to listen to me.</p>
+  <p>But if you don't, you might want to keep your phone on vibrate, because a ring isn't coming. You'll end up like James Harden, Russell Westbrook and Chris Paul: all that talent, no rings.</p>
+  <p>Here's the honest question. If doing things your way hasn't gotten you what you want, what do you have to lose by trying the blueprint?</p>
   <h3>What it all comes down to</h3>
-  <p>If you really want what you say you want, a man who'll take care of you, protect you and all of that, you have to:</p>
+  <p>If you really want what you say you want, a man who will take care of you, protect you and commit to you, then you have to:</p>
   <ol class="list">
-    <li><strong>Operate in reality</strong> and get out of the delusion.</li>
-    <li><strong>Take an honest accounting of yourself</strong> and realize who you are right now.</li>
-    <li><strong>Understand the work</strong> it takes to get the man you want, and do it.</li>
+    <li><strong>Operate in reality</strong> and let go of the illusion.</li>
+    <li><strong>Take an honest accounting of yourself</strong> and see who you are right now.</li>
+    <li><strong>Do the work</strong> it takes to attract the man you want.</li>
   </ol>
-  <p>If you're stuck in your ways and don't think you need to change or improve, then you'll be alone tomorrow, unless you count the cats, the dogs and the books.</p>
+  <p>If you stay stuck in your ways and don't think you need to change or grow, you could end up alone, with only the cats, the dogs and the books for company. You deserve better than that. Now you know how to get it.</p>
+  <div class="prompts"><strong>Ask yourself</strong>
+    <ul class="list">
+      <li>Of the men giving me attention right now, which ones are actually offering commitment?</li>
+      <li>Which of the four ways am I already doing, and which one would change the most for me?</li>
+      <li>What's one thing I can start this week?</li>
+    </ul>
+  </div>
 </section>
 
 <section class="chapter" id="cheatsheet">
   <p class="chapter-num">Quick reference</p>
-  <h2>The Cheat Sheet</h2>
+  <h2>Your Cheat Sheet</h2>
   <div class="cards">
-    <div class="card"><h3>The illusion</h3><p>DMs, guy friends and street approaches aren't real options.</p></div>
-    <div class="card"><h3>The core mistake</h3><p>Confusing sexual attraction with relationship attraction.</p></div>
+    <div class="card"><h3>The illusion</h3><p>DMs, guy friends and street approaches are attention, not options.</p></div>
+    <div class="card"><h3>The core mistake</h3><p>Confusing his sexual attraction with relationship attraction.</p></div>
     <div class="card"><h3>The math</h3><p>1,000 attracted becomes a handful who'll commit, and who you also like.</p></div>
-    <div class="card"><h3>The clock</h3><p>Options don't replenish for women the way they do for men.</p></div>
+    <div class="card"><h3>The clock</h3><p>Your options don't replenish the way his do. Be intentional.</p></div>
     <div class="card"><h3>Way one</h3><p>Get in shape. It can double or triple your pool.</p></div>
-    <div class="card"><h3>Way two</h3><p>Dress modestly. It's a force field against low-intent men.</p></div>
-    <div class="card"><h3>Way three</h3><p>Act like a lady. Let men protect and provide. That's your power.</p></div>
+    <div class="card"><h3>Way two</h3><p>Dress modestly. It's your force field against low-intent men.</p></div>
+    <div class="card"><h3>Way three</h3><p>Act like a lady. Letting men protect and provide is your power.</p></div>
     <div class="card"><h3>Way four</h3><p>Keep your body count low, and don't act like it if it isn't.</p></div>
-    <div class="card"><h3>Above all</h3><p>Reality, honest self-accounting and work.</p></div>
+    <div class="card"><h3>Above all</h3><p>Reality, honest self-accounting and work. You've got this.</p></div>
   </div>
 </section>
 
 <section class="signoff">
   <p class="big">Stay safe.<br><span>Stay dangerous.</span></p>
-  <p class="source">Adapted from the King's Wisdom video &ldquo;Women Don't Have Real Options.&rdquo; If this helped, like, comment and subscribe on the channel. Merch and one-on-one consultations on understanding women and relationships are linked in the video description.</p>
+  <p class="source">Adapted from the King's Wisdom video &ldquo;Women Don't Have Real Options.&rdquo; If this helped, like, comment and subscribe on the channel. Merch and one-on-one consultations on understanding men, women and relationships are linked in the video description.</p>
 </section>
 
 </main>
+</div>
 
 </body>
 </html>

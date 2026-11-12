@@ -139,6 +139,16 @@ ul.list li, ol.list li { margin-bottom: .45em; }
 .signoff p.big span { color: var(--accent); }
 .source { font-size: .9rem; color: var(--muted); margin-top: 40px; border-top: 1px solid var(--rule); padding-top: 16px; }
 
+/* "For Her" edition palette: rose + plum, same series layout */
+.her { --accent: #b8336a; --quote-bar: #b8336a; --cover: #26121d; --box: #f3e3e9; --rule: #e2cfd6; }
+.her .cover::before { background: radial-gradient(circle, rgba(232,106,154,.38), rgba(232,106,154,0) 65%); }
+.her .cover .sub { color: #ecd9e1; }
+.her .cover .series { color: #d6b8c5; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .her { --accent: #ff7aa8; --quote-bar: #ff7aa8; --box: #2a1c23; --rule: #3c2a33; }
+}
+:root[data-theme="dark"] .her { --accent: #ff7aa8; --quote-bar: #ff7aa8; --box: #2a1c23; --rule: #3c2a33; }
+
 /* Print / PDF */
 @page { size: 6in 9in; margin: 0.7in 0.65in 0.75in; }
 @page cover { margin: 0; }
@@ -154,6 +164,7 @@ ul.list li, ol.list li { margin-bottom: .45em; }
   blockquote, .law, .takeaway, .card, .funnel, .prompts { break-inside: avoid; }
   .law, .takeaway, .funnel div { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   h2, h3 { break-after: avoid; }
+  .her { --accent: #a82d5f; --quote-bar: #a82d5f; --box: #f7eaef; --rule: #e6d3da; }
   .toc a { padding: 7px 0; font-size: 10.5pt; }
   .signoff { padding-top: 2.4in; }
 }
