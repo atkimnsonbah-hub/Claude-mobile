@@ -117,7 +117,7 @@ ul.list li, ol.list li { margin-bottom: .45em; }
 }
 .funnel div b { font-size: 1.3rem; margin-right: 8px; }
 .funnel .f2 { width: 88%; opacity: .9; } .funnel .f3 { width: 72%; opacity: .8; }
-.funnel .f4 { width: 54%; opacity: .7; } .funnel .f5 { width: 38%; opacity: .6; background: var(--ink); color: var(--paper); opacity: 1; }
+.funnel .f4 { width: 58%; opacity: .7; } .funnel .f5 { width: 46%; opacity: .6; background: var(--ink); color: var(--paper); opacity: 1; }
 .funnel .f1 { width: 100%; }
 .cards { display: grid; gap: 14px; margin: 24px 0; }
 .card { border: 1px solid var(--rule); border-top: 4px solid var(--accent); border-radius: 6px; padding: 16px 18px; }
